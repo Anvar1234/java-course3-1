@@ -1,3 +1,5 @@
+package validatorTest;
+
 import org.junit.jupiter.api.Test;
 import ru.yandex.kingartaved.validator.MathExpressionValidator;
 
@@ -19,12 +21,12 @@ public class MathExpressionValidatorTest {
 
     @Test
     public void isValidTokensTest(){
-        MathExpressionValidator validator = new MathExpressionValidator(" +-/*()[].0123456789^");//пробел зачищается изначально
+        MathExpressionValidator validator = new MathExpressionValidator(" +-/*()[].,0123456789^");//пробел зачищается изначально
         assertTrue(validator.isValidTokensForTest());
     }
     @Test
     public void isValidTokensNegativeTest(){
-        MathExpressionValidator validator = new MathExpressionValidator(" ,");
+        MathExpressionValidator validator = new MathExpressionValidator(" %");
         assertFalse(validator.isValidTokensForTest());
     }
 
